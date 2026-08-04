@@ -3,11 +3,11 @@ import { Item } from "./Item.js";
 export function getOptions(form: HTMLFormElement) {
   const formData = new FormData(form);
 
-  const formSpeed = formData.get("speed") ?? 1;
+  const formSpeed = (formData.get("speed") as string) ?? "1";
   const formSorting = formData.get("sorting") ?? "bubble";
   const formMode = formData.get("mode") ?? "random";
 
-  const speed = 100 / Number.parseInt(formSpeed.toString());
+  const speed = 100 / Number.parseInt(formSpeed);
   const sorting = formSorting.valueOf();
   const mode = formMode.valueOf();
 
