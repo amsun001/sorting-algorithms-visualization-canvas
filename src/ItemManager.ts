@@ -9,13 +9,14 @@ export class ItemManager {
   private isRunning: boolean;
   private sortBtn: HTMLButtonElement;
 
-  public constructor(
+  public constructor( 
     screenWidth: number,
     screenHeight: number,
     arraySize: number,
     ctx: CanvasRenderingContext2D,
     sortBtn: HTMLButtonElement
   ) {
+    this.items = []; 
     this.screenWidth = screenWidth;
     this.screenHeight = screenHeight;
     this.arraySize = arraySize;
