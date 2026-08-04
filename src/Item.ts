@@ -1,10 +1,10 @@
 export class Item {
-  private x: number;
-  private y: number;
-  private width: number;
-  private height: number;
-  private ctx: CanvasRenderingContext2D;
-  private color: string;
+  private readonly x: number;
+  private readonly y: number;
+  private readonly width: number;
+  private readonly height: number;
+  private readonly ctx: CanvasRenderingContext2D;
+  private readonly color: string;
 
   public constructor(
     x: number,
