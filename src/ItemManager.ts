@@ -2,12 +2,12 @@ import { Item } from "./Item.js";
 
 export class ItemManager {
   private items: Item[];
-  private screenWidth: number;
-  private screenHeight: number;
-  private arraySize: number;
-  private ctx: CanvasRenderingContext2D;
+  private readonly screenWidth: number;
+  private readonly screenHeight: number;
+  private readonly arraySize: number;
+  private readonly ctx: CanvasRenderingContext2D;
   private isRunning: boolean;
-  private sortBtn: HTMLButtonElement;
+  private readonly sortBtn: HTMLButtonElement;
 
   public constructor( 
     screenWidth: number,

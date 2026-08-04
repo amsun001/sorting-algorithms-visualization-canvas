@@ -4,7 +4,7 @@ import { delay } from "../util.js";
 class MinHeap {
   private array: number[];
   private size: number;
-  private maxSize: number;
+  private readonly maxSize: number;
 
   public constructor(maxSize: number) {
     this.array = new Array(maxSize);
