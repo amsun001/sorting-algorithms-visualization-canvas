@@ -98,7 +98,7 @@ export class ItemManager {
     return this.items;
   }
 
-  public runAnimation(sortingAlgorithm: Function, animationSpeed: number) {
+  public runAnimation(sortingAlgorithm: (manager: ItemManager, speed: number) => void | Promise<void>, animationSpeed: number) {
     this.isRunning = true;
     this.sortBtn.innerHTML = "Stop";
     sortingAlgorithm(this, animationSpeed);

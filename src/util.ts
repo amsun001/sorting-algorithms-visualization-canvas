@@ -15,13 +15,13 @@ export function getOptions(form: HTMLFormElement) {
 }
 
 export function swap(array: Item[], i: number, j: number) {
-  let aux = array[i].getValue();
+  const aux = array[i].getValue();
   array[i].setValue(array[j].getValue());
   array[j].setValue(aux);
 }
 
 export async function delay(time: number): Promise<void> {
-  return new Promise((resolve, _reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve();
     }, time);

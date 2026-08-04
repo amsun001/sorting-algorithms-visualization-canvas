@@ -29,7 +29,7 @@ class MinHeap {
       return -1;
     }
 
-    let value = this.array[0];
+    const value = this.array[0];
 
     this.array[0] = this.array[this.size - 1];
     this.array[this.size - 1] = 0;
@@ -42,8 +42,8 @@ class MinHeap {
 
   private heapifyDown(index: number) {
     let smallest = index;
-    let left = 2 * index + 1;
-    let right = 2 * index + 2;
+    const left = 2 * index + 1;
+    const right = 2 * index + 2;
 
     if (left < this.size && this.array[left] < this.array[smallest])
       smallest = left;
@@ -58,7 +58,7 @@ class MinHeap {
   }
 
   private heapifyUp(index: number) {
-    let parent: number = ((index - 1) / 2) | 0;
+    const parent: number = ((index - 1) / 2) | 0;
 
     if (parent >= 0 && this.array[index] < this.array[parent]) {
       this.swap(index, parent);
@@ -69,7 +69,7 @@ class MinHeap {
   private swap(a: number, b: number) {
     if (!this.array[a] || !this.array[b]) return;
 
-    let aux = this.array[a];
+    const aux = this.array[a];
     this.array[a] = this.array[b];
     this.array[b] = aux;
   }
@@ -109,7 +109,8 @@ async function heapSort(manager: ItemManager, animationSpeed: number) {
 
   array.forEach((item) => heap.insert(item.getValue()));
 
-  await new Promise<void>(async (resolve, _reject) => {
+  await new Promise<void>((resolve) => {
+    (async () => {
     const heapArray = heap.getArray();
     for (let i = 0; i < array.length; i++) {
       array[i].setValue(heapArray[i]);
@@ -123,7 +124,7 @@ async function heapSort(manager: ItemManager, animationSpeed: number) {
       array[i].setColor("white");
     }
 
-    resolve();
+    resolve();})();
   });
 
   heap.sort(manager, animationSpeed);

@@ -6,7 +6,7 @@ import { getOptions } from "./util.js";
 import { heapSort } from "./sorting/heapSort.js";
 import { mergeSort } from "./sorting/mergeSort.js";
 
-addEventListener("DOMContentLoaded", (e) => {
+addEventListener("DOMContentLoaded", () => {
   const canvas = document.querySelector("canvas") as HTMLCanvasElement;
   const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 
@@ -16,7 +16,7 @@ addEventListener("DOMContentLoaded", (e) => {
   const width = (canvas.width = 900);
   const height = (canvas.height = 600);
 
-  let manager = new ItemManager(width, height, 60, ctx, sortBtn);
+  const manager = new ItemManager(width, height, 60, ctx, sortBtn);
   manager.paintBackground();
 
   form.addEventListener("submit", (e) => {

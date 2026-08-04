@@ -1,5 +1,12 @@
 build/
 node_modules/
 
+# Ignore compiled JavaScript files
+dist/
+*.js
+
+# But keep specific JS files if they exist in root
+!eslint.config.mjs
+
 .prettierrc
 favicon.ico
