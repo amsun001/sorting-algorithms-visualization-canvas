@@ -58,7 +58,7 @@ class MinHeap {
   }
 
   private heapifyUp(index: number) {
-    const parent: number = ((index - 1) / 2) | 0;
+    const parent: number = Math.trunc((index-1)/2);
 
     if (parent >= 0 && this.array[index] < this.array[parent]) {
       this.swap(index, parent);

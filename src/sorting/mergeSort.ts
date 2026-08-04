@@ -67,7 +67,7 @@ async function mergeSort(
   animationSpeed: number
 ) {
   if (start < end && manager.isAnimationRunning()) {
-    const mid = ((end + start) / 2) | 0;
+    const mid = Math.trunc((end + start) / 2);
 
     await mergeSort(array, start, mid, manager, animationSpeed);
     await mergeSort(array, mid + 1, end, manager, animationSpeed);
