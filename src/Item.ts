@@ -2,9 +2,9 @@ export class Item {
   private readonly x: number;
   private readonly y: number;
   private readonly width: number;
-  private readonly height: number;
+  private height: number;
   private readonly ctx: CanvasRenderingContext2D;
-  private readonly color: string;
+  private  color: string;
 
   public constructor(
     x: number,
