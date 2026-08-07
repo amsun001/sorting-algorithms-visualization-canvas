@@ -17,6 +17,7 @@ addEventListener("DOMContentLoaded", () => {
   const height = (canvas.height = 600);
 
   const manager = new ItemManager(width, height, 60, ctx, sortBtn);
+     (window as unknown as { __manager?: unknown }).__manager = manager;
   manager.paintBackground();
 
   form.addEventListener("submit", (e) => {
