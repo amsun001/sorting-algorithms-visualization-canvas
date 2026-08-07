@@ -60,6 +60,7 @@ public getter. → Geometry-only, stated plainly; colour deferred until its
 semantic rule is fixed before scoring.
 
 ---
+Note: colour is not decorative here — red/blue/white are the app's primary teaching signals (which items are being compared vs. settled), so deferring colour is a known limitation to revisit, not a closed decision. It is deferred only because correct scoring needs a fixed per-boundary semantic rule (the app resets colour after its final paint of a step, so model and render legitimately disagree on colour at the sampling instant); it is not dropped.
 
 ## Carried forward to Phase 1.2 (notes, not failures)
 - Separate sets for `setTimeout` vs `requestAnimationFrame` ids — shared id
